@@ -65,6 +65,8 @@ void measurePerformance() {
     
     cout << "Perf: " << endl;
     cout << "n, Avg(ms)" << endl;
+    srand(time(NULL));
+    double sumTime = 0.0;
     
     for (int size = 1; size <= maxSize; size++) {
         vector<vector<int>> testInputs(iterations, vector<int>(size));
@@ -97,7 +99,10 @@ void measurePerformance() {
         }
         double avgTime = totalTime / iterations; // find avg time in ms
         cout << "n=" << size << ", " << avgTime << "ms" << endl;
+        sumTime = sumTime + avgTime;
     }
+    cout << "Total Runtime: " << sumTime << "ms" << endl;
+    cout << "Average for n: " << sumTime/maxSize << "ms" << endl;
 }
 
 void printArray(const vector<int>& arr) {
@@ -117,7 +122,7 @@ int main() {
     cout << "Choice: " << endl;
     cin >> option;
     
-    // if choose 1(the program), it will ask to choose 1. put your own value, 2.Auto genarate the value, it will be the same value evertime thou.
+    // if choose 1(the program), it will ask to choose 1. put your own value, 2.Auto genarate the value
     if (option == 1) {
         int subOption;
         cout << "Input: " << endl;
@@ -141,8 +146,9 @@ int main() {
             cout << "Size: " << endl;
             cin >> n;
             arr.resize(n);
+            srand(time(NULL));
             for (int i = 0; i < n; i++) {
-                arr[i] = rand() % 1000; // random number, not really.
+                arr[i] = rand() % 1000;
             }
             cout << "Arr: " << endl;
             printArray(arr);
