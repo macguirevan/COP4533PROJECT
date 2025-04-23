@@ -2,7 +2,7 @@
 
 This project implements the QuickSelect algorithm for finding the k-th smallest element in an unsorted array, along with comprehensive memory usage and performance analysis tools.
 
-#LINK - https://www.youtube.com/watch?v=Hb-HSah_aBU
+# LINK - https://www.youtube.com/watch?v=Hb-HSah_aBU
 
 ## Algorithm Overview
 
